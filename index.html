@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">            <!---------------CSS Linked here-------------->
+    <title>Resume Genrator</title>
+</head>
+<body>
+
+
+                   <!------------html start here----------->
+
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Genrator</h1>                          <!-------- Heading in center-------->
+        <p class="text-center my-2">Made by Harshal </p>
+
+        <div class="row">
+            <div class="col-md-6">                                                   <!---Page sepration--->
+ 
+
+                <!-----------First column------------>
+
+                <h3 >Persnoal Information</h3>
+             <div class="form-group">
+                 <label for="nameField">Your Name</label>                             <!--------Name declaration------->
+                 <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+             </div>
+
+
+
+             <div class="form-group mt-2">
+                <label for="ContactField">Your Contact number</label>                 <!------Phone number declaration------>
+                <input type="text" id="ContactField" placeholder="Enter here" class="form-control">
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="addressField">Your Address </label>                      <!---Address declaration-->
+                <textarea type="text" id="addressField" placeholder="Enter here" class="form-control" rows="4"></textarea>       <!----address placement rows="4"-->
+                
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="">Select image</label>
+                <input id="imgField" type="file" class="form-control"/>         
+            </div>
+
+            <p class="text-secondary my-2">Important Links</p>
+
+            <!------------------Social media links------------------>
+
+            <div class="form-group mt-2">
+                <label for="emailField">E-mail</label>                                <!-------E-mail declaration------>
+                <input type="text" id="emailField" placeholder="Enter here" class="form-control">
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="fbField">Facebook</label>                                <!---Facebook declaration-->
+                <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="instaField">Instagram</label>                           <!---Instagram declaration-->
+                <input type="text" id="instaField" placeholder="Enter here" class="form-control">
+            </div>
+
+            <div class="form-group mt-2">
+                <label for="linkedField">LinkedIn</label>                             <!---Linkedin declaration-->
+                <input type="text" id="linkedField" placeholder="Enter here" class="form-control">
+            </div>
+
+              
+
+
+            </div>
+            <div class="col-md-6">
+
+
+                <!---------------------second column------------------->
+
+                <h3 >Professional Information</h3>
+
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>                                                            <!---Describe your self ------>
+                    <textarea id="objectiveField" rows="5" type="text"  placeholder="Enter here" class="form-control" rows="4"></textarea>           <!----address placement rows="4"-->
+                    
+                </div>
+
+                <div class="form-group mt-3 " id="we">
+                    <label for="">Work Experience</label>                                 <!---Describe your Work experience ------>
+                    <textarea  type="text"  placeholder="Enter here" class="form-control weField" rows="3"></textarea>
+
+                    <!------------------New text area------------->
+
+                     <div class="container text-center mt-2" id="weAddButton">
+                         <button onclick="addNewWEField()" class="btn btn-primary btn-sm mt-2">Add</button>
+
+                     </div>                               
+                    
+                </div>
+
+                <div class="form-group mt-3" id="aq">
+                    <label for="">Academic Qulification</label>                           <!---Describe your Qulification ------>
+                    <textarea rows="3"  placeholder="Enter here" class="form-control eqField" ></textarea>
+                     <div class="container text-center mt-2" id="aqAddButton">
+                         <button onclick="addNewAQField()" class="btn btn-primary btn-sm mt-2">Add</button>
+
+                     </div>                               
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="container text-center mt-2">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+
+    </div>
+      
+
+    <!-----------------------------CV Template-------------------------------->
+
+    <div class="container" id="cv-template"> 
+
+        <div class="row">                       <!--------------------page sepration------------->
+
+            <div class="col-md-4 text-center mt-5 background">
+
+                <!-----------this is first coloum of template-------------->
+
+                <img src="https://st3.depositphotos.com/1156795/35622/v/450/depositphotos_356226476-stock-illustration-profile-placeholder-image-gray-silhouette.jpg" 
+                alt=""
+                class="img-fluid myimg" 
+                id="imgTemplate"
+
+                >
+
+                <div class="container">
+                    <p id="nameT1">Harshal Tupe</p>    <!------------Information declaration---------->
+                    <p id="contactT">+91-9370946170, +91-7798750716</p>
+                    <p id="addressT"> Umroli, post Koshane, Tal Karjat-410201, Raigad, maharashtra, India</p>
+                    <hr/>
+                           <!------------- Importanat linkss-------->
+                           <p><a id="gmailT" href="#1">harshaltupe12@gmail.com</a></p>
+                           
+                    <p><a id="fbT" href="#1">https://www.facebook.com/HarshalTupe</a></p>
+                          <!------------- Importanat linkss-------->
+
+                    <p><a id="instaT" href="#1">https://www.instagram.com/HarshalTupe</a></p>
+
+                    <p><a id="linkedT" href="#1">https://www.linkedIn.com/HarshalTupe</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-8 py-3">
+
+                <!-----------this is second coloum of template-------------->
+
+                <h1 id="nameT2" class="text-center" style="font-weight: 500;">Harshal Tupe</h1>
+
+                <!--------------------objective Card----------------------->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+
+                     <h3>Objective </h3>
+                    </div>
+
+
+                    <div class="card-body">
+                        <p id="objectiveT">To secure a challenging position in a reputable organization to expand my learnings, knowledge, and skills.
+                            Secure a responsible career opportunity to fully utilize my training and skills, while making a significant contribution to the success of the company.</p>
+                    </div>
+                </div>
+
+                <!---------------Work experience-------------->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+
+                     <h3>Work Experience </h3>
+                    </div>
+
+
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, voluptates!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, voluptates!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, voluptates!</li>
+                        </ul>
+                    </div>
+                </div>
+                       <!----this for Acedmic qulification--------->
+                <div class="card mt-4">
+                    <div class="card-header background">
+
+                     <h3>Academic Qulification </h3>
+                    </div>
+
+
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, voluptates!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, voluptates!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, voluptates!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">Print Resume</button>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
